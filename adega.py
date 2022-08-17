@@ -12,17 +12,17 @@ while resposta == 1:
     resposta2 = int(input())
     if resposta2 == 1:
         resposta3 = resposta2
-        
+
         #Define qual vinho será escolhido
         while resposta3 == 1:
             print("Qual vinho deseja adicionar?")
             while cont < (len(vinho)):
-                print(cont, vinho[(cont)])
+                print(f"{cont}.", vinho[(cont)])
                 cont = cont + 1
             idVin = int(input())
             cont = 0
             tipoVin = vinho[idVin]
-            
+
             #Adiciona a quantidade de vinhos ao estoque
             while tipoVin == vinho[idVin]:
                 numVin = int(input("Digite a quantidade de vinhos:"))
@@ -36,12 +36,16 @@ while resposta == 1:
                 if resposta3 == 2:
                     resposta2 = 2
                     resposta = 2                    
-    else:
-        
+    elif resposta2 == 2:
+
         #Adiciona um novo tipo de vinho a lista
         new = str(input("Digite o nome do vinho: "))
         vinho.append(new)
         estoque.append(0)
+    elif resposta2 == 3:
+        resposta = 3
+    else:
+        print("Resposta não encontrada!")
 
 if total != 0:
     print("Total de vinhos na adega:", total)
